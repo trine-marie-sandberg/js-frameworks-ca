@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
 const Button = styled.button`
-  background-color: ${(props) => props.theme.color.primary};
+  background-color: ${(props) => props.theme.color.secondary};
 `;
 export function NavBar() {
     return(
