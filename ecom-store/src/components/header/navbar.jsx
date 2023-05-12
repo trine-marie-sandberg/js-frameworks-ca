@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
-import { Nav, Ul, Li, I } from "./style";
+import { Nav, Ul, Li } from "./style";
 import { NavLink } from "react-router-dom";
 
 const Button = styled.button`

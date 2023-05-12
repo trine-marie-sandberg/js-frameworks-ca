@@ -4,6 +4,10 @@ const theme = {
     color: {
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)',
+        tertiary: 'var(--color-tertiary)',
+        font: 'var(--color-font)',
+        warning: 'var(--color-warning)',
+        dark: 'var(--color-dark)',
     },
 }
 

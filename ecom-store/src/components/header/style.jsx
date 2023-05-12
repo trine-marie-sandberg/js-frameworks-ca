@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
+export const Head = styled.header`
+  display: flex;
+  background-color: ${(props) => props.theme.color.primary}}
+`;
 export const Nav =  styled.nav`
-  color: blue;
+  color: ${(props) => {props.theme.color.font}};
   display: flex;
   flex-wrap: wrap;
   align-items: center;

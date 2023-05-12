@@ -1,11 +1,14 @@
 import React from "react";
 import { NavBar } from "./navbar";
+import { Head } from "./style";
+import { Link } from "react-router-dom";
+import "./style.module.css";
 
 export default function Header() {
     return(
-        <header>
-            <h2>LOGO</h2>
+        <Head>
+            <Link to={"home"}><h2>LOGO</h2></Link>
             <NavBar/>
-        </header>
+        </Head>
     )
 }
