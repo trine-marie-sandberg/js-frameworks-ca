@@ -22,7 +22,7 @@ export function NavBar() {
                     <NavLink to={route2}>Page 2</NavLink>
                 </Li>
             </Ul>
-            <Button>Login</Button>
+            <Button>Cart</Button>
         </Nav>
     )
 }

@@ -7,19 +7,20 @@ const GlobalStyle = createGlobalStyle`
     --color-secondary: rgb(182, 255, 175);
     --color-tertiary: blue;
     --color-font: white;
-    --color-warning-red;
+    --color-warning-red: red;
     --color-dark: rgb(11, 19, 10);
 
-    --sizes
+    --sizes-xs: 5px;
+    --sizes-sm: 1rem;
+    --sizes-med: 1.5rem;
+    --sizes-lg: 2rem;
+    --sizes-xl: 3rem;
   }
   body {
     height: 100%;
   }
   main {
     margin: 1rem;
-  }
-  a {
-    all: unset;
   }
 `;
 

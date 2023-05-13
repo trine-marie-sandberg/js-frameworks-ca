@@ -9,6 +9,13 @@ const theme = {
         warning: 'var(--color-warning)',
         dark: 'var(--color-dark)',
     },
+    sizes: {
+        xs: 'var(--sizes-xs)',
+        sm: 'var(--sizes-sm)',
+        med: 'var(--sizes-med)',
+        lg: 'var(--sizes-lg)',
+        xl: 'var(--sizes-xl)',
+    },
 }
 
 export const Theme = ({children}) => (
