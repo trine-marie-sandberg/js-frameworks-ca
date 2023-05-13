@@ -3,6 +3,8 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
   html {
     height: 100%;
+    display: block;
+
     --color-primary: rgb(36, 43, 42);
     --color-secondary: rgb(182, 255, 175);
     --color-tertiary: blue;
@@ -16,8 +18,10 @@ const GlobalStyle = createGlobalStyle`
     --sizes-lg: 2rem;
     --sizes-xl: 3rem;
   }
-  main {
-    margin: 1rem;
+  body {
+    all: unset;
+    display: block;
+    height: 100%;
   }
 `;
 
