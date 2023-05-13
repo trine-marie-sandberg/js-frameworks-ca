@@ -16,9 +16,6 @@ const GlobalStyle = createGlobalStyle`
     --sizes-lg: 2rem;
     --sizes-xl: 3rem;
   }
-  body {
-    height: 100%;
-  }
   main {
     margin: 1rem;
   }
