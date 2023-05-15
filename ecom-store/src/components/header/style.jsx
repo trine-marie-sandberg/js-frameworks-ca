@@ -36,3 +36,11 @@ export const LogoText = styled.p`
   color: #dfffb6;
   display: inline;
 `;
+export const CartWrapper = styled.div`
+  display: flex;
+`;
+export const CartItemsIndikator = styled.p`
+  align-self: center;
+  margin: 0 auto;
+  color: ${(props) => props.theme.color.font};
+`;
