@@ -21,6 +21,7 @@ export const Ul = styled.ul`
 export const I = styled.i`
   font-size: 2.5rem;
   padding: 5px;
+  color: ${(props) => props.theme.color.font};
 `;
 export const Li = styled.li`
   padding: 5px;

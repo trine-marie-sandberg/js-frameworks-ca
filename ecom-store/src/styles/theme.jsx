@@ -1,4 +1,5 @@
 import { ThemeProvider } from "styled-components";
+import "../assets/fontawsome/css/all.css";
 
 const theme = {
     color: {
