@@ -20,6 +20,7 @@ const theme = {
         xl: 'var(--sizes-xl)',
 
         card: 'var(--sizes-card)',
+        borderRadius: 'var(--sizes-border-radius)',
     },
 }
 

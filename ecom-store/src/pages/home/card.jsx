@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Image } from "./style";
+import { Image, CardsWrapp, CardWrap } from "./style";
 
 export default function Cards() {
 
@@ -16,15 +16,16 @@ export default function Cards() {
     getData();
   }, []);
 
-return (<div className="card-container">
+return (<CardsWrapp>
   {data.map((data) => {
-    console.log(data)
     return(
-    <Link key={data.id}>
-        <h2>{data.title}</h2>
-        <Image src={data.imageUrl}></Image>
-    </Link>
+    <CardWrap key={data.id}>
+        <Link>
+            <h2>{data.title}</h2>
+            <Image src={data.imageUrl}></Image>
+        </Link>
+    </CardWrap>
     )
   })}
-</div>)
+</CardsWrapp>)
 }
