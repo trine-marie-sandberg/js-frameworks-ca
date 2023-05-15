@@ -3,9 +3,13 @@ import { styled } from "styled-components";
 export const Main = styled.main`
 all: unset;
 display: block;
-  background-color: var(--color-primary);
   color: var(--color-font);
-  height: 100%;
   margin: 0;
   padding: 0;
+`;
+
+export const Wrapper = styled.div`
+  background-color: var(--color-primary);
+  display: grid;
+  grid-template-rows: 1fr 7fr 1fr
 `;
