@@ -17,10 +17,17 @@ export function NavBar() {
         <Nav>
             <Ul>
                 <Li>
-                    <NavLink to={route1}><I className="fa-solid fa-house"></I></NavLink>
+                    <NavLink to="home" aria-label="Home">
+                        <I className="fa-solid fa-house"></I>
+                    </NavLink>
                 </Li>
                 <Li>
                     <CartIcon/>
+                </Li>
+                <Li>
+                    <NavLink to="contact" aria-label="Contact">
+                       <I className="fa-solid fa-phone"></I>
+                    </NavLink>
                 </Li>
             </Ul>
         </Nav>
