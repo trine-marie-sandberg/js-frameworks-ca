@@ -11,5 +11,5 @@ display: block;
 export const Wrapper = styled.div`
   background-color: var(--color-primary);
   display: grid;
-  grid-template-rows: 1fr 7fr 1fr
+  grid-template-rows: 1fr 7fr 1fr;
 `;

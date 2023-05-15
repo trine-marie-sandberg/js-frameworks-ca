@@ -7,7 +7,9 @@ const GlobalStyle = createGlobalStyle`
     --color-tertiary: blue;
     --color-font: white;
     --color-warning-red: red;
-    --color-dark: rgb(11, 19, 10);
+    --color-contrast-light: rgb(40, 49, 48);
+    --color-contrast-dark: rgb(31, 37, 37);
+    --color-black: rgb(11, 19, 10);
 
     --sizes-xs: 5px;
     --sizes-sm: 1rem;
