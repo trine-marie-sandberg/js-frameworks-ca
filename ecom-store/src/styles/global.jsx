@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
     --sizes-med: 1.5rem;
     --sizes-lg: 2rem;
     --sizes-xl: 3rem;
+    --sizes-card: 250px;
   }
   body {
     all: unset;

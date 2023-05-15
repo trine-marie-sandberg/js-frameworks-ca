@@ -5,10 +5,13 @@ export const Main = styled.main`
   display: block;
   color: ${(props) => props.theme.color.font};
   margin: ${(props) => props.theme.sizes.lg};
+  margin: ${(props) => props.theme.sizes.lg} auto;
 `;
 
 export const Wrapper = styled.div`
   background-color: var(--color-primary);
   display: grid;
   grid-template-rows: 1fr 7fr 1fr;
+  max-height: 100vh;
+  overflow: scroll;
 `;

@@ -18,6 +18,8 @@ const theme = {
         med: 'var(--sizes-med)',
         lg: 'var(--sizes-lg)',
         xl: 'var(--sizes-xl)',
+
+        card: 'var(--sizes-card)',
     },
 }
 
