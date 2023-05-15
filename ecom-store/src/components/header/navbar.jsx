@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
-import { Nav, Ul, Li } from "./style";
+import { Nav, Ul, Li, I } from "./style";
 import { NavLink } from "react-router-dom";
 
 const Button = styled.button`
@@ -9,20 +9,19 @@ const Button = styled.button`
 
 //ROUTES
 const route1 = "home";
-const route2 = "page2";
+const route2 = "cart";
 
 export function NavBar() {
     return(
         <Nav>
             <Ul>
                 <Li>
-                    <NavLink to={route1}>Home</NavLink>
+                    <NavLink to={route1}><I className="fa-solid fa-house"></I></NavLink>
                 </Li>
                 <Li>
-                    <NavLink to={route2}>Page 2</NavLink>
+                    <NavLink to={route2}><I className="fa-solid fa-cart-shopping"></I></NavLink>
                 </Li>
             </Ul>
-            <Button>Cart</Button>
         </Nav>
     )
 }
