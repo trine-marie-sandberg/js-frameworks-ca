@@ -21,6 +21,9 @@ const GlobalStyle = createGlobalStyle`
     all: unset;
     display: block;
   }
+  .active i {
+    color: #a4fffa !important;
+  }
 `;
 
 export default GlobalStyle;

@@ -1,11 +1,10 @@
 import { styled } from "styled-components";
 
 export const Main = styled.main`
-all: unset;
-display: block;
-  color: var(--color-font);
-  margin: 0;
-  padding: 0;
+  all: unset;
+  display: block;
+  color: ${(props) => props.theme.color.font};
+  margin: ${(props) => props.theme.sizes.lg};
 `;
 
 export const Wrapper = styled.div`
