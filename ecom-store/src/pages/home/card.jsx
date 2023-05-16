@@ -20,7 +20,7 @@ return (<CardsWrapp>
   {data.map((data) => {
     return(
     <CardWrap key={data.id}>
-        <Link>
+        <Link to={`product`}>
             <h2>{data.title}</h2>
             <Image src={data.imageUrl}></Image>
         </Link>
