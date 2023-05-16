@@ -11,7 +11,6 @@ export const CardsWrapp = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  padding: ${(props) => props.theme.sizes.med};
 `;
 export const CardWrap = styled.div`
   background-color: ${(props) => props.theme.color.light};
