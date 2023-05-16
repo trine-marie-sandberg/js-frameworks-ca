@@ -8,6 +8,7 @@ const theme = {
         tertiary: 'var(--color-tertiary)',
         font: 'var(--color-font)',
         warning: 'var(--color-warning)',
+        darker: 'var(--color-contrast-darker)',
         dark: 'var(--color-contrast-dark)',
         light: 'var(--color-contrast-light)',
         black: 'var(--color-black)',

@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
     --color-warning-red: red;
     --color-contrast-light: rgb(40, 49, 48);
     --color-contrast-dark: rgb(31, 37, 37);
+    --color-contrast-darker: rgb(28, 34, 34);
     --color-black: rgb(11, 19, 10);
 
     --sizes-xs: 5px;

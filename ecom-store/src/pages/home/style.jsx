@@ -15,8 +15,8 @@ export const CardsWrapp = styled.div`
 `;
 export const CardWrap = styled.div`
   background-color: ${(props) => props.theme.color.light};
-  border: solid 2px ${(props) => props.theme.color.dark};
+  border: solid 2px ${(props) => props.theme.color.darker};
   border-radius: ${(props) => props.theme.sizes.borderRadius};
-  padding: 15px;
-  margin: 5px;
+  padding: ${(props) => props.theme.sizes.sm};
+  margin: ${(props) => props.theme.sizes.xs};
 `;

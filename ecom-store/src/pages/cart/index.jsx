@@ -1,9 +1,10 @@
 import React from "react";
+import { PageWrap } from "../../components/pagewrapp/style";
 
 export default function Cart() {
     return(
-        <div>
+        <PageWrap>
             <h1>CART</h1>
-        </div>
+        </PageWrap>
     )
 }
