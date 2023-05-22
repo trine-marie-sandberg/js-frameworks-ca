@@ -16,16 +16,18 @@ export default function Cards() {
     getData();
   }, []);
 
-return (<CardsWrapp>
+return (
+<CardsWrapp>
   {data.map((data) => {
     return(
     <CardWrap key={data.id}>
-        <Link to={`product`}>
+        <Link to={`product/${data.id}`}>
             <h2>{data.title}</h2>
             <Image src={data.imageUrl}></Image>
         </Link>
     </CardWrap>
     )
   })}
-</CardsWrapp>)
+</CardsWrapp>
+)
 }
