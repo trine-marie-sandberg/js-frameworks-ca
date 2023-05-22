@@ -19,12 +19,12 @@ export default function ProductPage() {
       getData();
     }, []);
 
-console.log(data)
 let price = data.price;
 let discount = data.discountedPrice;
 let saleIcon;
 let saleText;
 let tags = [data.tags];
+
 let rating = data.rating;
 let stars = [];
 function createStars(rating) {
@@ -33,10 +33,9 @@ function createStars(rating) {
     }
 };
 createStars(rating);
-console.log(rating)
+
 if (price > discount) {
     price = discount;
-    console.log("DISCOUNT: " + discount)
     saleIcon = <i className="fa-solid fa-fire"></i>;
     saleText = <p>{saleIcon} On sale! Ordinary price: {data.price}</p>
 }
@@ -53,7 +52,7 @@ if (price > discount) {
             {saleText}
             <p>Tags: {...tags}</p>
             </div>
-            <Image src={data.imageUrl}/>
+            <Image src={data.imageUrl} alt={data.title}/>
         </PageWrap>
     )
 }
