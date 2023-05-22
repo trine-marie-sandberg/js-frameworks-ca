@@ -1,6 +1,6 @@
 import React from "react";
-import Cards from "./card";
-import { CardsWrap } from "./cardwrapper";
+import Cards from "../../components/cards/card";
+import { CardsWrap } from "../../components/cards/cardwrapper";
 import { PageWrap } from "../../components/pagewrapp/style";
 
 export default function Home() {

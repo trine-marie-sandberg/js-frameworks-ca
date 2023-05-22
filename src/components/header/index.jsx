@@ -7,7 +7,7 @@ import "./style.module.css";
 export default function Header() {
     return(
         <Head>
-            <NavLink to={"home"}>
+            <NavLink to={"/"}>
                 <Logo className="fa-brands fa-react"></Logo>
                 <LogoText>ReCom</LogoText>
             </NavLink>

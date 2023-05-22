@@ -17,7 +17,7 @@ export function NavBar() {
         <Nav>
             <Ul>
                 <Li>
-                    <NavLink to="home" aria-label="Home">
+                    <NavLink to="/" aria-label="Home">
                         <I className="fa-solid fa-house"></I>
                     </NavLink>
                 </Li>
