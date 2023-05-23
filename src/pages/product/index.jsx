@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { PageWrap } from "../../components/pagewrapp/style";
-import { Image, ProductWrap, Button, Icon, EmphasizeText, MarginWrap } from "./style";
+import { Image, ProductWrap, Button, Icon, EmphasizeText, MarginWrap, StarWrap } from "./style";
 
 export default function ProductPage() {
 
@@ -39,8 +39,12 @@ if (price > discount) {
     saleIcon = <i className="fa-solid fa-fire"></i>;
     saleText = <p>{saleIcon} On sale! Ordinary price: {data.price}</p>
 }
+const navigate = useNavigate()
     return(
         <PageWrap>
+            <Button onClick={() => navigate(-1)} aria-label="Back button">
+              <Icon className="fa-solid fa-arrow-rotate-left"></Icon>
+            </Button>
             <ProductWrap>
                 <MarginWrap>
                   <h1>{data.title}</h1>
@@ -48,14 +52,16 @@ if (price > discount) {
                     <p>$ {price}</p>
                   </EmphasizeText>
                   <p>{data.description}</p>
-                  <p>Rating:</p>
-                    <div aria-label={"Product rating: " + rating + " stars"}>
-                      {...stars}
-                      <EmphasizeText>
-                        {saleText}
-                      </EmphasizeText>
-                    </div>
+                  <EmphasizeText>
+                      {saleText}
+                      <StarWrap aria-label={"Product rating: " + rating + " stars"}>
+                         <MarginWrap>Rating:</MarginWrap>
+                         {...stars}
+                      </StarWrap>
+                  </EmphasizeText>
+                  <MarginWrap>
                     <Button>Add to cart + <Icon className="fa-solid fa-cart-shopping"></Icon></Button>
+                  </MarginWrap>
                 </MarginWrap>
                 <MarginWrap>
                     <Image src={data.imageUrl} alt={data.title}/>
