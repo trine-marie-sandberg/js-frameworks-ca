@@ -5,7 +5,9 @@ export const Image = styled.img`
   width: 100%;
   max-width: 300px;
   border-radius: ${(props) => props.theme.sizes.borderRadius};
-  margin: ${(props) => props.theme.sizes.med};
+`;
+export const MarginWrap = styled.div`
+  margin: ${(props) => props.theme.sizes.sm};
 `;
 export const ProductWrap = styled.div`
   display: flex;
@@ -24,7 +26,7 @@ export const Button = styled.button`
 export const Icon = styled.i`
   font-size: ${(props) => props.theme.sizes.sm};
 `;
-export const SaleText = styled.div`
+export const EmphasizeText = styled.div`
   color: ${(props) => props.theme.color.secondary};
   font-size: larger;
 `;

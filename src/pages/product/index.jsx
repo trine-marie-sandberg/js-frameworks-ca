@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { PageWrap } from "../../components/pagewrapp/style";
-import { Image, ProductWrap, Button, Icon, SaleText } from "./style";
+import { Image, ProductWrap, Button, Icon, EmphasizeText, MarginWrap } from "./style";
 
 export default function ProductPage() {
 
@@ -42,21 +42,25 @@ if (price > discount) {
     return(
         <PageWrap>
             <ProductWrap>
-                <div>
+                <MarginWrap>
                   <h1>{data.title}</h1>
-                  <p>$ {price}</p>
+                  <EmphasizeText>
+                    <p>$ {price}</p>
+                  </EmphasizeText>
                   <p>{data.description}</p>
                   <p>Rating:</p>
                     <div aria-label={"Product rating: " + rating + " stars"}>
                       {...stars}
-                      <SaleText>
+                      <EmphasizeText>
                         {saleText}
-                      </SaleText>
-                      <p>Tags: {...tags}</p>
+                      </EmphasizeText>
                     </div>
                     <Button>Add to cart + <Icon className="fa-solid fa-cart-shopping"></Icon></Button>
-                </div>
-                <Image src={data.imageUrl} alt={data.title}/>
+                </MarginWrap>
+                <MarginWrap>
+                    <Image src={data.imageUrl} alt={data.title}/>
+                    <p>Tags: {...tags}</p>
+                </MarginWrap>
             </ProductWrap>
         </PageWrap>
     )
