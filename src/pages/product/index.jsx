@@ -1,24 +1,15 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import apiCall from "../../hooks/api";
 import { PageWrap } from "../../components/pagewrapp/style";
 import { Image, ProductWrap, Button, Icon, EmphasizeText, MarginWrap, StarWrap } from "./style";
 import HandleClick from "./handleclick";
 
 export default function ProductPage() {
 
-    const [data, setData] = useState([]);
     let params = useParams();
     const id = params.id;
-    const endpoint = `https://api.noroff.dev/api/v1/online-shop/${id}`;
-  
-    async function getData() {
-      const response = await fetch(endpoint);
-      setData(await response.json());
-    }
-    useEffect(() => {
-      getData();
-    }, []);
+    const { data, loading, error } = apiCall(`https://api.noroff.dev/api/v1/online-shop/${id}`);
 
     let price = data.price;
     let discount = data.discountedPrice;
@@ -45,6 +36,14 @@ export default function ProductPage() {
     }
     const navigate = useNavigate();
     let addToCart = false;
+
+    if(loading) {
+      return <PageWrap>Loading. . . </PageWrap>
+    }
+    if(error) {
+      return <PageWrap>Error</PageWrap>
+    }
+    
     return(
         <PageWrap>
             <Button onClick={() => navigate(-1)} aria-label="Back button">
