@@ -1,8 +1,8 @@
 import { createContext, useState, useEffect, useReducer } from "react";
 import reducer from "./reducer";
-import { Button, Icon } from "../../pages/product/style";
+import { Button, Icon } from "./style";
 
-export default function CartBtn(addToCart) {
+export default function CartBtn() {
 
     const cartState = {
         count: 0,
