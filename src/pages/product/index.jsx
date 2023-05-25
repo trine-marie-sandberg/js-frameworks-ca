@@ -3,7 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import apiCall from "../../hooks/api";
 import { PageWrap } from "../../components/pagewrapp/style";
 import { Image, ProductWrap, Button, Icon, EmphasizeText, MarginWrap, StarWrap } from "./style";
-import HandleClick from "./handleclick";
+import HandleClick from "../../components/cart";
+import CartBtn from "../../components/cart";
 
 export default function ProductPage() {
 
@@ -43,7 +44,7 @@ export default function ProductPage() {
     if(error) {
       return <PageWrap>Error</PageWrap>
     }
-    
+
     return(
         <PageWrap>
             <Button onClick={() => navigate(-1)} aria-label="Back button">
@@ -63,10 +64,7 @@ export default function ProductPage() {
                          {...stars}
                       </StarWrap>
                   </EmphasizeText>
-                  <MarginWrap>
-                    <Button onClick={HandleClick(addToCart)}>Add to cart + <Icon className="fa-solid fa-cart-shopping"></Icon></Button>
-                  </MarginWrap>
-                  <div>{addToCart === true ? <p>true</p>: ""}</div>
+                  <CartBtn/>
                 </MarginWrap>
                 <MarginWrap>
                     <Image src={data.imageUrl} alt={data.title}/>
