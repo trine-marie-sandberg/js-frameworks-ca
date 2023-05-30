@@ -17,21 +17,28 @@ export default function CartBtn() {
     }
     
     const [state, setState] = useReducer(reducer, cartState);
-    let amount = state.count;
+    let updateCartState = {
+        id: id,
+        count: state.count,
+        item: [],
+        totalPrice: 0,
+    }
 
     function cartAdd() { 
         setState({ type: 'increment' });
+        storage.save(id, updateCartState);
     }
     function cartRemove() {
         setState({ type: 'decrement' });
+        storage.save(id, updateCartState);
     }
     function cartClear() {
         setState({ type: 'reset' });
+        storage.remove(id);
     }
 
     const cartItem = storage.load(id);
     console.log(cartItem)
-    storage.save(id, state.count);
     
     return (
         <div>

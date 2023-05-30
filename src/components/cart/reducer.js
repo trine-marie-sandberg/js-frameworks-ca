@@ -11,7 +11,9 @@ export default function reducer(state, action) {
 
         case 'increment':
           console.log(amount)
-          return { count: state.count + 1 };
+          return { count: state.count + 1,
+            item: ['test']
+           };
 
         case 'decrement':
           if (amount < 0) {
