@@ -3,43 +3,48 @@ import { useParams } from "react-router-dom";
 import reducer from "./reducer";
 import * as storage from "../../hooks/storage";
 import { Button, Icon } from "./style";
+//import { cartAdd, cartRemove, cartClear } from './cartfunctions';
 
 export default function CartBtn() {
     let params = useParams();
     const id = params.id;
 
+    let cart;
     let cartState = {
         id: id,
         count: 0,
-        item: [],
+        cart: [1,2],
         totalItems: 0,
         totalPrice: 0,
     }
     
     const [state, setState] = useReducer(reducer, cartState);
+    //cart = [...state.cart];
     let updateCartState = {
         id: id,
         count: state.count,
-        item: [],
+        cart: [1,2],
         totalPrice: 0,
     }
-
+    if (state.count < 1) {
+        storage.remove(id);
+    } else {
+        storage.save(id, updateCartState);
+    }
+    
     function cartAdd() { 
         setState({ type: 'increment' });
-        storage.save(id, updateCartState);
+
     }
     function cartRemove() {
         setState({ type: 'decrement' });
-        storage.save(id, updateCartState);
+
     }
     function cartClear() {
         setState({ type: 'reset' });
         storage.remove(id);
     }
 
-    const cartItem = storage.load(id);
-    console.log(cartItem)
-    
     return (
         <div>
             <Button onClick={cartAdd}>
