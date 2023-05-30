@@ -1,12 +1,14 @@
-import { createContext, useState, useEffect, useReducer } from "react";
+import React, { useReducer } from 'react';
 import { useParams } from "react-router-dom";
 import reducer from "./reducer";
 import * as storage from "../../hooks/storage";
 import { Button, Icon } from "./style";
 
 export default function CartBtn() {
+    let params = useParams();
+    const id = params.id;
 
-    const cartState = {
+    let cartState = {
         count: 0,
         item: [],
         totalItems: 0,
@@ -14,26 +16,30 @@ export default function CartBtn() {
     }
     
     const [state, setState] = useReducer(reducer, cartState);
-    let params = useParams();
-    const id = params.id;
-    let count = state.count;
-    
+
+    function cartAdd() { 
+        setState({ type: 'increment' });
+        storage.save(id, state.count);
+    }
+    function cartRemove() {
+        setState({ type: 'decrement' });
+        storage.save(id, state.count);
+    }
+    function cartClear() {
+        setState({ type: 'reset' });
+        storage.save(id, state.count);
+    }
+
     return (
         <div>
-            <Button onClick={
-                function cartAdd() { 
-                    setState({ type: 'increment' });
-                    storage.save("id", id);
-                    storage.save("amount", count);
-                }
-            }>
+            <Button onClick={cartAdd}>
                 Add to cart + 
                 <Icon className="fa-solid fa-cart-shopping"></Icon>
             </Button>
-          <div>Count: {state.count}</div>
-          <button onClick={() => setState({ type: 'decrement' })}>-</button>
-          <button onClick={() => setState({ type: 'increment' })}>+</button>
-          <button onClick={() => setState({ type: 'reset' })}>Reset</button>
+          <div>Count: {storage.load(id)}</div>
+          <button onClick={cartRemove}>-</button>
+          <button onClick={cartAdd}>+</button>
+          <button onClick={cartClear}>Remove</button>
         </div>
       );
 };
