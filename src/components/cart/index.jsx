@@ -1,5 +1,7 @@
 import { createContext, useState, useEffect, useReducer } from "react";
+import { useParams } from "react-router-dom";
 import reducer from "./reducer";
+import * as storage from "../../hooks/storage";
 import { Button, Icon } from "./style";
 
 export default function CartBtn() {
@@ -12,9 +14,19 @@ export default function CartBtn() {
     }
     
     const [state, setState] = useReducer(reducer, cartState);
+    let params = useParams();
+    const id = params.id;
+    let count = state.count;
+    
     return (
         <div>
-            <Button onClick={() => setState({ type: 'increment' })}>
+            <Button onClick={
+                function cartAdd() { 
+                    setState({ type: 'increment' });
+                    storage.save("id", id);
+                    storage.save("amount", count);
+                }
+            }>
                 Add to cart + 
                 <Icon className="fa-solid fa-cart-shopping"></Icon>
             </Button>
