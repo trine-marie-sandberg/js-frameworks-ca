@@ -9,6 +9,7 @@ export default function CartBtn() {
     const id = params.id;
 
     let cartState = {
+        id: id,
         count: 0,
         item: [],
         totalItems: 0,
@@ -16,27 +17,29 @@ export default function CartBtn() {
     }
     
     const [state, setState] = useReducer(reducer, cartState);
+    let amount = state.count;
 
     function cartAdd() { 
         setState({ type: 'increment' });
-        storage.save(id, state.count);
     }
     function cartRemove() {
         setState({ type: 'decrement' });
-        storage.save(id, state.count);
     }
     function cartClear() {
         setState({ type: 'reset' });
-        storage.save(id, state.count);
     }
 
+    const cartItem = storage.load(id);
+    console.log(cartItem)
+    storage.save(id, state.count);
+    
     return (
         <div>
             <Button onClick={cartAdd}>
                 Add to cart + 
                 <Icon className="fa-solid fa-cart-shopping"></Icon>
             </Button>
-          <div>Count: {storage.load(id)}</div>
+          <div>Count: {state.count}</div>
           <button onClick={cartRemove}>-</button>
           <button onClick={cartAdd}>+</button>
           <button onClick={cartClear}>Remove</button>

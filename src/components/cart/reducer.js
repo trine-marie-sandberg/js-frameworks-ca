@@ -1,3 +1,5 @@
+import * as storage from "../../hooks/storage";
+
 export default function reducer(state, action) {
 
     let amount = state.count;
@@ -17,8 +19,6 @@ export default function reducer(state, action) {
           }
           console.log(amount)
           return { count: amount - 1 };
-        case 'addAmount':
-          return { count: state.count + action };
 
         case 'reset':
           console.log(amount)
