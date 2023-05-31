@@ -1,23 +1,22 @@
 export default function reducer(state, action) {
 
     let amount = state.count;
-    if (amount < 0) {
-      amount = 0
+    if (amount < 1) {
+      amount = 0;
     }
 
     switch (action.type) {
 
         case 'increment':
-          return { count: state.count + 1,
-            item: ['test']
-           };
+          return { count: state.count + 1 }
 
         case 'decrement':
-          if (amount < 0) {
-            amount = 0
+          if (amount === 0) {
+            return { count: amount };
+          } else {
+            return { count: amount - 1 };
           }
-          return { count: amount - 1 };
-
+          
         case 'reset':
           return { count: 0 };
 
