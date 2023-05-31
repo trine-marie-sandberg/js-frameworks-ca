@@ -55,7 +55,6 @@ export default function CartBtn() {
                 Add to cart + 
                 <Icon className="fa-solid fa-cart-shopping"></Icon>
             </Button>
-            <h3>Add or remove products's</h3>
           <p>Currently {currentCount} in cart <Icon className="fa-solid fa-cart-shopping"></Icon></p>
           <button onClick={cartRemove}>-</button>
           <button onClick={cartAdd}>+</button>

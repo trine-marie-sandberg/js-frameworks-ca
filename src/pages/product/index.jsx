@@ -3,8 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import apiCall from "../../hooks/api";
 import { PageWrap } from "../../components/pagewrapp/style";
 import { Image, ProductWrap, Button, Icon, EmphasizeText, MarginWrap, StarWrap } from "./style";
-import HandleClick from "../../components/cart";
-import CartBtn from "../../components/cart";
+import HandleClick from "../../components/cartbtn";
+import CartBtn from "../../components/cartbtn";
 
 export default function ProductPage() {
 
