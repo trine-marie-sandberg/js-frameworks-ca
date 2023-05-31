@@ -3,7 +3,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import apiCall from "../../hooks/api";
 import { PageWrap } from "../../components/pagewrapp/style";
 import { Image, ProductWrap, Button, Icon, EmphasizeText, MarginWrap, StarWrap } from "./style";
-import HandleClick from "../../components/cartbtn";
 import CartBtn from "../../components/cartbtn";
 
 export default function ProductPage() {
@@ -36,7 +35,6 @@ export default function ProductPage() {
         saleText = <p>{saleIcon} On sale! Ordinary price: {data.price}</p>
     }
     const navigate = useNavigate();
-    let addToCart = false;
 
     if(loading) {
       return <PageWrap>Loading. . . </PageWrap>
