@@ -26,9 +26,7 @@ export default function CartBtn() {
         cart: [1,2],
         totalPrice: 0,
     }
-    if (state.count < 1) {
-        storage.remove(id);
-    } else {
+    if (state.count) {
         storage.save(id, updateCartState);
     }
     
