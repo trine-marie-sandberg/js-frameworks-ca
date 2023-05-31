@@ -1,4 +1,4 @@
-export default function reducer(state, action) {
+export default function cartReducer(state, action) {
 
     let amount = state.count;
     if (amount < 1) {

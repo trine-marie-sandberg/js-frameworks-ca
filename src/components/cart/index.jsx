@@ -1,29 +1,24 @@
 import React, { useReducer } from 'react';
 import { useParams } from "react-router-dom";
-import reducer from "./reducer";
+import cartReducer from '../../hooks/cartreducer';
 import * as storage from "../../hooks/storage";
 import { Button, Icon } from "./style";
-//import { cartAdd, cartRemove, cartClear } from './cartfunctions';
 
 export default function CartBtn() {
     let params = useParams();
     const id = params.id;
 
-    let cart;
     let cartState = {
         id: id,
         count: 0,
-        cart: [1,2],
         totalItems: 0,
         totalPrice: 0,
     }
     
-    const [state, setState] = useReducer(reducer, cartState);
-    //cart = [...state.cart];
+    const [state, setState] = useReducer(cartReducer, cartState);
     let updateCartState = {
         id: id,
         count: state.count,
-        cart: [1,2],
         totalPrice: 0,
     }
     if (state.count > 0) {
