@@ -14,7 +14,7 @@ export default function ProductPage() {
   let tags = [data.tags];
   const cv = productVariables(data);
   const starIcons = createStars(cv.rating, cv.stars);
-  const cartBtn = cartBtns(id, cv.title, cv.price, cv.imageUrl);
+  const cartBtn = cartBtns(id, cv.title, cv.price, cv.imgUrl);
 
   if(loading) {
     return <PageWrap>Loading. . . </PageWrap>;

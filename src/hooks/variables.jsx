@@ -4,6 +4,8 @@ export function productVariables(data) {
     let saleIcon;
     let saleText;
     let rating = data.rating;
+    let title = data.title;
+    let imgUrl = data.imageUrl;
 
     if (price > discount) {
         price = discount;
@@ -11,7 +13,7 @@ export function productVariables(data) {
         saleText = <p>{saleIcon} On sale! Ordinary price: {price}</p>;
     }
 
-    return {price, discount, saleIcon, saleText, rating};
+    return {price, discount, saleIcon, saleText, rating, title, imgUrl};
 }
 
 export function cartVariables(id) {

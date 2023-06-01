@@ -6,15 +6,12 @@ export default function Cart() {
     const cartItems = {...localStorage};
     
     let cartArray = [];
-    let objectKeys = Object.keys(cartItems)
-    let loadItems = []
+    let objectKeys = Object.keys(cartItems);
 
     for(let i = 0; i < objectKeys.length; i++) {
-        loadItems.push(storage.load(objectKeys[i]))
-        cartArray.push(cartItems[i])
-        
+        cartArray.push(storage.load(objectKeys[i]));
     }
-    console.log(loadItems)
+    console.log(cartArray)
     //console.log(cartItems)
     return(
         <PageWrap>
