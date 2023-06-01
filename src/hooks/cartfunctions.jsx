@@ -21,7 +21,7 @@ export function cartBtns(id, title, price, img) {
         imgUrl: img,
       };
       if (state.count > 0) {
-        storage.save(id, updateCartState);console.log(updateCartState)
+        storage.save(id, updateCartState);
     }
     function add() { 
         setState({ type: 'increment' });

@@ -1,7 +1,6 @@
 import React from "react";
 import { PageWrap } from "../../components/pagewrapp/style";
 import * as storage from "../../hooks/storage";
-import { Link } from "react-router-dom";
 import { CartWrap, CartContainer, Image, SmallText, Icon, Heading } from "./style";
 import { useNavigate } from "react-router-dom";
 import { cartBtns } from "../../hooks/cartfunctions";
@@ -19,8 +18,6 @@ export default function Cart() {
     }
     const total = totalArray.reduce((partialSum, a) => partialSum + a, 0);
     
-    console.log(cartArray)
-    //console.log(cartItems)
     return(
         <PageWrap>
             <div>
@@ -36,7 +33,7 @@ export default function Cart() {
                             <CartWrap key={data.id}>
                                 <button onClick={cartBtn.add}>+</button>
                                 <button onClick={cartBtn.remove}>-</button>
-                                <button onClick={cartBtn.clear}>Remove</button> 
+                                <button onClick={cartBtn.remove}>Remove</button> 
                                 {cartBtn.displayCount}
                                 <div  onClick={() => navigate(`/product/${data.id}`)} aria-label="Back button">
                                 <SmallText>{data.title}</SmallText>
