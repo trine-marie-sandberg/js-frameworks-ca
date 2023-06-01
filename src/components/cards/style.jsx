@@ -7,14 +7,23 @@ export const Image = styled.img`
   border-radius: ${(props) => props.theme.sizes.borderRadius};
 `;
 export const CardsWrapp = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns:  repeat( auto-fill, minmax(250px, 1fr) );
+  grid-column-gap: 6px;
+  grid-row-gap: 6px;
+  padding:  ${(props) => props.theme.sizes.sm};
+  border-radius: ${(props) => props.theme.sizes.borderRadius};
+  background-color: ${(props) => props.theme.color.darker};
 `;
 export const CardWrap = styled.div`
-  background-color: ${(props) => props.theme.color.light};
   border: solid 2px ${(props) => props.theme.color.darker};
   border-radius: ${(props) => props.theme.sizes.borderRadius};
-  padding: ${(props) => props.theme.sizes.sm};
+  background-color: ${(props) => props.theme.color.primary};
   margin: ${(props) => props.theme.sizes.xs};
+  padding:  ${(props) => props.theme.sizes.sm};
+  margin: 5px;
+  cursor: pointer;
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.562) 0px 5px 15px;
+  }
 `;

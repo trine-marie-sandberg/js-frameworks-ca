@@ -2,7 +2,7 @@ import React from "react";
 import { PageWrap } from "../../components/pagewrapp/style";
 import * as storage from "../../hooks/storage";
 import { Link } from "react-router-dom";
-import { CartWrap, CartContainer, Image, SmallText } from "./style";
+import { CartWrap, CartContainer, Image, SmallText, Icon, Heading } from "./style";
 import { useNavigate } from "react-router-dom";
 import { cartBtns } from "../../hooks/cartfunctions";
 
@@ -22,8 +22,11 @@ export default function Cart() {
     return(
         <PageWrap>
             <div>
-                <h1>My cart</h1>
                 <CartContainer>
+                    <Heading>
+                        <h1>My cart</h1>
+                        <Icon className="fa-solid fa-cart-shopping"></Icon>
+                    </Heading>
                     {cartArray.map((data) => {
                         const cartBtn = cartBtns(data.id, data.title, data.price, data.imgUrl);
                         return(
@@ -42,6 +45,7 @@ export default function Cart() {
                     })}
                 </CartContainer>
                 <h2>Checkout</h2>
+                <h3>Payment</h3>
             </div>
         </PageWrap>
     )

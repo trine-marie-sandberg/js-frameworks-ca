@@ -13,7 +13,7 @@ export const CartWrap = styled.div`
   }
 `;
 export const CartContainer = styled.div`
-  max-height: 250px;
+  max-height: 400px;
   overflow-y: scroll;
   display: grid;
   grid-template-columns:  repeat( auto-fill, minmax(190px, 1fr) );
@@ -25,7 +25,8 @@ export const CartContainer = styled.div`
   text-decoration: none;
 `;
 export const Icon = styled.i`
-  font-size: ${(props) => props.theme.sizes.sm};
+  font-size: ${(props) => props.theme.sizes.lg};
+  padding: 10px;
 `;
 export const Image = styled.img`
   height: 100%;
@@ -35,4 +36,8 @@ export const Image = styled.img`
 `;
 export const SmallText = styled.h2`
   font-size: ${(props) => props.theme.sizes.sm};
+`;
+export const Heading = styled.div`
+  color: ${(props) => props.theme.color.secondary};
+  margin: 0 auto;
 `;
