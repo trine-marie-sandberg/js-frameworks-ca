@@ -9,13 +9,15 @@ import { cartBtns } from "../../hooks/cartfunctions";
 export default function Cart() {
     const navigate = useNavigate();
     const cartItems = {...localStorage};
-    
     let cartArray = [];
     let objectKeys = Object.keys(cartItems);
+    let totalArray = [];
 
     for(let i = 0; i < objectKeys.length; i++) {
         cartArray.push(storage.load(objectKeys[i]));
+        totalArray.push(cartArray[i].price)
     }
+    const total = totalArray.reduce((partialSum, a) => partialSum + a, 0);
     
     console.log(cartArray)
     //console.log(cartItems)
@@ -26,6 +28,7 @@ export default function Cart() {
                     <Heading>
                         <h1>My cart</h1>
                         <Icon className="fa-solid fa-cart-shopping"></Icon>
+                        <h2>Total: ${total}</h2>
                     </Heading>
                     {cartArray.map((data) => {
                         const cartBtn = cartBtns(data.id, data.title, data.price, data.imgUrl);
