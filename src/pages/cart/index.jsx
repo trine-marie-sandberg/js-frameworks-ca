@@ -2,8 +2,11 @@ import React from "react";
 import { PageWrap } from "../../components/pagewrapp/style";
 import * as storage from "../../hooks/storage";
 import { Link } from "react-router-dom";
+import { CartWrap, Image } from "./style";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
+    const navigate = useNavigate();
     const cartItems = {...localStorage};
     
     let cartArray = [];
@@ -20,13 +23,13 @@ export default function Cart() {
             <div>
                 {cartArray.map((data) => {
                     return(
-                        <div key={data.id}>
-                            <Link>
+                        <CartWrap key={data.id}>
+                            <div  onClick={() => navigate(`/product/${data.id}`)} aria-label="Back button">
                               <h2>{data.title}</h2>
                               <p>{data.price}</p>
-                              <img src={data.imgUrl} alt={data.title}></img>
-                            </Link>
-                        </div>
+                              <Image src={data.imgUrl} alt={data.title}></Image>
+                            </div>
+                        </CartWrap>
                     )
                 })}
             </div>
