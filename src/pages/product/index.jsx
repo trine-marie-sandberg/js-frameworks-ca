@@ -3,9 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { PageWrap } from "../../components/pagewrapp/style";
 import { Image, ProductWrap, Button, Icon, EmphasizeText, MarginWrap, StarWrap } from "./style";
 import apiCall from "../../hooks/api";
-import cartReducer from "../../hooks/cartreducer";
-import * as storage from "../../hooks/storage";
-import { productVariables, createStars, cartVariables } from "../../hooks/variables";
+import { productVariables, createStars } from "../../hooks/variables";
 import { cartBtns } from "../../hooks/cartfunctions";
 
 export default function ProductPage() {
