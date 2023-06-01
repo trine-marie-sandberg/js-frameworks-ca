@@ -1,6 +1,7 @@
 import React from "react";
 import { PageWrap } from "../../components/pagewrapp/style";
 import * as storage from "../../hooks/storage";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
     const cartItems = {...localStorage};
@@ -16,6 +17,19 @@ export default function Cart() {
     return(
         <PageWrap>
             <h1>CART</h1>
+            <div>
+                {cartArray.map((data) => {
+                    return(
+                        <div key={data.id}>
+                            <Link>
+                              <h2>{data.title}</h2>
+                              <p>{data.price}</p>
+                              <img src={data.imgUrl} alt={data.title}></img>
+                            </Link>
+                        </div>
+                    )
+                })}
+            </div>
         </PageWrap>
     )
 }
