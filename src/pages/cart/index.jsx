@@ -33,7 +33,7 @@ export default function Cart() {
                             <CartWrap key={data.id}>
                                 <button onClick={cartBtn.add}>+</button>
                                 <button onClick={cartBtn.remove}>-</button>
-                                <button onClick={cartBtn.remove}>Remove</button> 
+                                <button onClick={cartBtn.clear}>Remove</button> 
                                 {cartBtn.displayCount}
                                 <div  onClick={() => navigate(`/product/${data.id}`)} aria-label="Back button">
                                 <SmallText>{data.title}</SmallText>

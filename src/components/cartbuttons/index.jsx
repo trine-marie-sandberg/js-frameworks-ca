@@ -4,7 +4,7 @@ import cartReducer from '../../hooks/cartreducer';
 import * as storage from "../../hooks/storage";
 import { Button, Icon } from "./style";
 
-export default function CartBtn() {
+export default function CartButtons() {
     let params = useParams();
     const id = params.id;
 
@@ -51,10 +51,6 @@ export default function CartBtn() {
     
     return (
         <div>
-            <Button onClick={cartAdd}>
-                Add to cart + 
-                <Icon className="fa-solid fa-cart-shopping"></Icon>
-            </Button>
           <p>Currently {currentCount} in cart <Icon className="fa-solid fa-cart-shopping"></Icon></p>
           <button onClick={cartRemove}>-</button>
           <button onClick={cartAdd}>+</button>
