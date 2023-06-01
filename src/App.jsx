@@ -5,7 +5,7 @@ import Layout from "./components/layout";
 import ProductPage from "./pages/product";
 import NotFound from "./pages/404";
 
-export default function App(cartState) {
+export default function App() {
 
   return (
 
