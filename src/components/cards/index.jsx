@@ -14,6 +14,13 @@ export default function Cards() {
     const newFilter = data.filter((value) => {
       return value.title.toLowerCase().includes(searchWord.toLowerCase());
     })
+    if(newFilter.length === 0){
+      newFilter.push({
+        title: "No products matches your search",
+        imageUrl: "https://cdn.dribbble.com/users/2580281/screenshots/6725773/404-we-cant-find.jpg?compress=1&resize=400x300&vertical=top",
+        id: "no-Id/noPage",
+      })
+    }
     setCards(newFilter);
   }
   try {
