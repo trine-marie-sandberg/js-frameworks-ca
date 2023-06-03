@@ -17,6 +17,10 @@ export const Input = styled.input`
   color: ${(props) => props.theme.color.secondary};
   border: none;
   width: 100%;
+  &:focus {
+    outline: none;
+    border: 1px solid ${(props) => props.theme.color.secondary};
+  }
 `;
 export const InputWrap = styled.div`
   display: flex;
@@ -34,6 +38,10 @@ export const TextArea = styled.textarea`
   background-color: ${(props) => props.theme.color.dark};
   color: ${(props) => props.theme.color.secondary};
   width: 100%;
+  &:focus {
+    outline: none;
+    border: 1px solid ${(props) => props.theme.color.secondary};
+  }
 `;
 export const Button = styled.button`
   background-color: ${(props) => props.theme.color.dark};
