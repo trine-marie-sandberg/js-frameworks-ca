@@ -33,7 +33,7 @@ export const Logo = styled.i`
 `;
 export const LogoText = styled.p`
   font-size: ${(props) => props.theme.sizes.sm};
-  color: #dfffb6;
+  color: ${(props) => props.theme.color.secondary};
   display: inline;
 `;
 export const CartWrapper = styled.div`
