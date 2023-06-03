@@ -27,3 +27,11 @@ export const CardWrap = styled.div`
     box-shadow: rgba(0, 0, 0, 0.562) 0px 5px 15px;
   }
 `;
+export const SearchBar = styled.input.attrs({ type: 'text' })`
+  background-color: white;
+  width: 20vw;
+  height: 25px;
+  margin: 5px;
+  border-radius: ${(props) => props.theme.sizes.borderRadius};
+  border: none;
+`;
