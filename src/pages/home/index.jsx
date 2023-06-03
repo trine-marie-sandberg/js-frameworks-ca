@@ -5,8 +5,8 @@ import Cards from "../../components/cards";
 export default function Home() {
     return(
         <PageWrap>
-          <h1>HOME</h1>
-          <h2><i className="fa-solid fa-fire"></i> items:</h2>
+          <h1>Welcome to ReCom store </h1>
+          <h2><i className="fa-solid fa-magnifying-glass"></i> Search for products:</h2>
           <Cards/>
         </PageWrap>
     )

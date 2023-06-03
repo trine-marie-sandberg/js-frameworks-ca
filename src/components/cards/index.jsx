@@ -34,7 +34,7 @@ export default function Cards() {
 
     if (cards.length > 0) return (
       <div>
-        <SearchBar type="text" placeholder="search. ." onChange={filterCards}></SearchBar>
+        <SearchBar type="text" aria-label="search for products" onChange={filterCards}></SearchBar>
           <CardsWrapp>
             {cards.map((data) => {
               return(
@@ -51,7 +51,7 @@ export default function Cards() {
     )
     if  (cards.length === 0) return(
       <div>
-      <SearchBar type="text" placeholder="search. ." onChange={filterCards}></SearchBar>
+      <SearchBar type="text" aria-label="search for products" onChange={filterCards}></SearchBar>
         <CardsWrapp>
           {data.map((data) => {
             return(
