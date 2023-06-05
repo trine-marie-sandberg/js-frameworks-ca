@@ -14,7 +14,8 @@ export default function CheckoutForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate('/checkout')
+        localStorage.clear();
+        navigate('/checkout');
     }
 
     return(
