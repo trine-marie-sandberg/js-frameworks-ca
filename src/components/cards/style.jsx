@@ -34,4 +34,7 @@ export const SearchBar = styled.input.attrs({ type: 'text' })`
   margin: 5px;
   border-radius: ${(props) => props.theme.sizes.borderRadius};
   border: none;
+  @media (max-width: 1000px) {
+    width: 200px;
+  }
 `;

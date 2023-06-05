@@ -105,3 +105,6 @@ export const Button = styled.button`
   border-radius: 4px;
   cursor: pointer;
 `;
+export const Padding = styled.div`
+  padding: 16px;
+`;

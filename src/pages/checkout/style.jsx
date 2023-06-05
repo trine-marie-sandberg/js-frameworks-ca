@@ -22,3 +22,6 @@ export const LinkWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
+export const Padding = styled.div`
+  padding: 16px;
+`;

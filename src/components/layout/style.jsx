@@ -4,7 +4,6 @@ export const Main = styled.main`
   all: unset;
   display: block;
   color: ${(props) => props.theme.color.font};
-  margin: ${(props) => props.theme.sizes.lg};
 `;
 
 export const Wrapper = styled.div`
