@@ -1,9 +1,10 @@
 import React from "react";
 import { PageWrap } from "../../components/pagewrapp/style";
 import * as storage from "../../hooks/storage";
-import { CartWrap, CartContainer, Image, SmallText, Icon, Heading } from "./style";
+import { CartWrap, CartContainer, Image, SmallText, Icon, Heading, FormContainer, Label, InputWrap, Input, Select } from "./style";
 import { useNavigate } from "react-router-dom";
 import { cartBtns } from "../../hooks/cartfunctions";
+import CheckoutForm from "../../components/checkoutform";
 
 export default function Cart() {
     const navigate = useNavigate();
@@ -25,7 +26,6 @@ export default function Cart() {
                     <Heading>
                         <h1>My cart</h1>
                         <Icon className="fa-solid fa-cart-shopping"></Icon>
-                        <h2>Total: ${total}</h2>
                     </Heading>
                     {cartArray.map((data) => {
                         const cartBtn = cartBtns(data.id, data.title, data.price, data.imgUrl);
@@ -45,7 +45,8 @@ export default function Cart() {
                     })}
                 </CartContainer>
                 <h2>Checkout</h2>
-                <h3>Payment</h3>
+                <h3>Total: ${total}</h3>
+                <CheckoutForm/>
             </div>
         </PageWrap>
     )
