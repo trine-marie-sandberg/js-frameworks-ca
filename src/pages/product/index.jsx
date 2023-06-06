@@ -5,6 +5,7 @@ import { Image, ProductWrap, Button, Icon, EmphasizeText, MarginWrap, StarWrap }
 import apiCall from "../../hooks/api";
 import { productVariables, createStars } from "../../hooks/variables";
 import { cartBtns } from "../../hooks/cartfunctions";
+import Loader from "../../components/loader";
 
 export default function ProductPage() {
   let params = useParams();
@@ -17,7 +18,9 @@ export default function ProductPage() {
   const cartBtn = cartBtns(id, cv.title, cv.price, cv.imgUrl);
 
   if(loading) {
-    return <PageWrap>Loading. . . </PageWrap>;
+    return <PageWrap>
+             <Loader/>
+           </PageWrap>;
   }
   if(error) {
     return <PageWrap>Error</PageWrap>;

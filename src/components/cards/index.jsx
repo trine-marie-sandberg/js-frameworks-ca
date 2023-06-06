@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Image, CardsWrapp, CardWrap, SearchBar } from "./style";
 import apiCall from "../../hooks/api";
+import Loader from "../loader";
 
 export default function Cards() {
 
@@ -26,7 +27,7 @@ export default function Cards() {
   try {
 
     if(loading) {
-      return <div>Loading. . . </div>
+      return <Loader/>
     }
     if(error) {
       return <div>Error</div>
