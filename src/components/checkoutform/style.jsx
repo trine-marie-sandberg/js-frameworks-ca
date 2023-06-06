@@ -4,8 +4,6 @@ export const FormContainer = styled.form`
   max-width: 1000px;
   padding: 20px;
   color: ${(props) => props.theme.color.secondary};
-  background-color: ${(props) => props.theme.color.darker};
-  border-radius: ${(props) => props.theme.sizes.borderRadius};
 `;
 export const Label = styled.label`
   color: ${(props) => props.theme.color.secondary};
