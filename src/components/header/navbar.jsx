@@ -8,10 +8,6 @@ const Button = styled.button`
   background-color: ${(props) => props.theme.color.secondary};
 `;
 
-//ROUTES
-const route1 = "home";
-const route2 = "cart";
-
 export function NavBar() {
     return(
         <Nav>

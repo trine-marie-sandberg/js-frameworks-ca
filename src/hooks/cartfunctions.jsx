@@ -32,9 +32,11 @@ export function cartBtns(id, title, price, img) {
     }
     function add() { 
         setState({ type: 'increment' });
+        window.dispatchEvent(new Event('storage'));
     }
     function remove() {
         setState({ type: 'decrement' });
+        window.dispatchEvent(new Event('storage'));
         //if(state.count <= 1) {
             //NB: 1 works as 0 for some reason
             //storage.remove(id);
@@ -43,6 +45,7 @@ export function cartBtns(id, title, price, img) {
     function clear() {
         setState({ type: 'reset' });
         storage.remove(id);
+        window.dispatchEvent(new Event('storage'));
     }
   
     let currentCount;
