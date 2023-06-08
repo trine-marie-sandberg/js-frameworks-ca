@@ -4,9 +4,16 @@ import * as storage from "./storage";
 import { Icon } from "../pages/product/style";
 
 export function cartBtns(id, title, price, img) {
+
+    const getCurrentCount = storage.load(id);
+    let setInitialCount = 0;
+    if(getCurrentCount) {
+        setInitialCount = getCurrentCount.count;
+    }
+
     let initialCartState = {
         id: id,
-        count: 0,
+        count: setInitialCount,
         title: "",
         price: "",
         imgUrl: "",
@@ -28,10 +35,10 @@ export function cartBtns(id, title, price, img) {
     }
     function remove() {
         setState({ type: 'decrement' });
-        if(state.count <= 1) {
+        //if(state.count <= 1) {
             //NB: 1 works as 0 for some reason
-            storage.remove(id);
-        }
+            //storage.remove(id);
+        //}
     }
     function clear() {
         setState({ type: 'reset' });
