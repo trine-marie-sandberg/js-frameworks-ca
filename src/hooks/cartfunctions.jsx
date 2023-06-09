@@ -52,10 +52,11 @@ export function cartBtns(id, title, price, img) {
     if(storage.load(id)) {
         let getCurrentCount = storage.load(id)
         currentCount = getCurrentCount.count;
+        window.dispatchEvent(new Event('storage'));
     } else {
         currentCount = 0;
     }
-    const displayCount = <p>Currently {currentCount} in cart <Icon className="fa-solid fa-cart-shopping"></Icon></p>
+    const displayCount = <p>Current copies: {currentCount} <Icon className="fa-solid fa-cart-shopping"></Icon></p>
 
     return {add, remove, clear, displayCount};
 }
