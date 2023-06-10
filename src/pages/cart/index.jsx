@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { PageWrap } from "../../components/pagewrapp/style";
 import * as storage from "../../hooks/storage";
 import { CartWrap, CartContainer, Image, SmallText, Icon, Heading, FormWrap, FlexWrap } from "./style";
@@ -17,7 +17,14 @@ export default function Cart() {
         cartArray.push(storage.load(objectKeys[i]));
         totalArray.push(cartArray[i].price)
     }
-    const total = totalArray.reduce((partialSum, a) => partialSum + a, 0);
+    const [cart, setCart] = useState(cartArray);
+    const [total, setTotal] = useState([])
+
+    useEffect(() => {
+        setCart(cartArray)
+        console.log(cart)
+        setTotal(() => totalArray.reduce((partialSum, a) => partialSum + a, 0))
+    }, [])
     
     return(
         <PageWrap>
@@ -27,7 +34,7 @@ export default function Cart() {
                         <h1>My cart</h1>
                         <Icon className="fa-solid fa-cart-shopping"></Icon>
                     </Heading>
-                    {cartArray.map((data) => {
+                    {cart.map((data) => {
                         const cartBtn = cartBtns(data.id, data.title, data.price, data.imgUrl);
                         return(
                             <CartWrap key={data.id}>
