@@ -3,9 +3,6 @@ import { NavLink } from "react-router-dom";
 import { I, CartWrapper, CartItemsIndikator } from "./style";
 
 export function CartIcon() {
-    const cartItems = {...localStorage};
-    let objectKeys = Object.keys(cartItems);
-    let itemsInCart = objectKeys.length;
 
     const [storageState, setStorageState] = useState(0);
     const [itemsCount, setItemsCount] = useState(0);
@@ -16,6 +13,9 @@ export function CartIcon() {
     });
 
     useEffect(() => {
+        let cartItems = {...localStorage};
+        let objectKeys = Object.keys(cartItems);
+        let itemsInCart = objectKeys.length;
         setItemsCount(itemsInCart);
     }, [storageState]);
 
