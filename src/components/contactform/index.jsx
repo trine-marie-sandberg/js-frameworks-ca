@@ -23,7 +23,13 @@ export default function ContactForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert("Success!")
+        console.log({
+            FullName: fullName,
+            subject: subject,
+            email: email,
+            body: body,
+        })
+        alert("Success!");
     }
 
     return (
