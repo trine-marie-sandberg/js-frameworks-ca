@@ -1,4 +1,5 @@
 import { SaleSum } from "./specialstyles";
+
 export function productVariables(data) {
 
     let price = data.price;
