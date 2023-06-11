@@ -29,8 +29,10 @@ export default function Cart() {
     const [total, setTotal] = useState([]);
     const [storageState, setStorageState] = useState(0);
 
-    window.addEventListener("storage", () => {
-        setStorageState(storageState + 1);
+    useEffect(() => {
+        window.addEventListener("storage", () => {
+            setStorageState(storageState + 1);
+        })
     })
 
     useEffect(() => {
