@@ -29,6 +29,7 @@ export default function CheckoutForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         localStorage.clear();
+        window.dispatchEvent(new Event('storage'));
         navigate('/checkout');
     }
 
