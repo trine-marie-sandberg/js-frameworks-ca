@@ -17,6 +17,7 @@ export const ProductWrap = styled.div`
 export const Button = styled.button`
   height: fit-content;
   padding: 10px 20px;
+  margin: 16px;
   cursor: pointer;
   background-color: ${(props) => props.theme.color.primary};
   color: ${(props) => props.theme.color.secondary};
@@ -41,4 +42,18 @@ export const CartBtn = styled.button`
   padding: 5px 8px;
   margin: 3px;
   cursor: pointer;
+`;
+export const ToCartBtn = styled.div`
+  height: fit-content;
+  width: fit-content;
+  padding: 10px 20px;
+  margin: 16px 0px;
+  cursor: pointer;
+  background-color: ${(props) => props.theme.color.primary};
+  color: ${(props) => props.theme.color.secondary};
+  border-radius: ${(props) => props.theme.sizes.borderRadius};
+  border: 1px solid ${(props) => props.theme.color.secondary};
+  & a {
+    color: ${(props) => props.theme.color.secondary};
+  }
 `;

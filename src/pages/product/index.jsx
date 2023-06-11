@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { PageWrap } from "../../components/pagewrapp/style";
-import { Image, ProductWrap, Button, Icon, EmphasizeText, MarginWrap, StarWrap, CartBtn } from "./style";
+import { Image, ProductWrap, Button, Icon, EmphasizeText, MarginWrap, StarWrap, CartBtn, ToCartBtn } from "./style";
 import apiCall from "../../hooks/api";
 import { productVariables, createStars } from "../../hooks/variables";
 import { cartBtns } from "../../hooks/cartfunctions";
@@ -45,9 +45,14 @@ export default function ProductPage() {
                       </StarWrap>
                   </EmphasizeText>
                   {cartBtn.displayCount}
-                  <CartBtn onClick={cartBtn.remove}>-</CartBtn>
-                  <CartBtn onClick={cartBtn.add}>+</CartBtn>
-                  <CartBtn onClick={cartBtn.clear}>Clear</CartBtn>
+                  <div>
+                    <CartBtn onClick={cartBtn.remove}>-</CartBtn>
+                    <CartBtn onClick={cartBtn.add}>+</CartBtn>
+                    <CartBtn onClick={cartBtn.clear}>Clear</CartBtn>
+                  </div>
+                  <Link to={"/cart"}>
+                    <ToCartBtn>Go to cart <i className="fa-solid fa-cart-shopping"></i></ToCartBtn>
+                  </Link>
                 </MarginWrap>
                 <MarginWrap>
                     <Image src={data.imageUrl} alt={data.title}/>

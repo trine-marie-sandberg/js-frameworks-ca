@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { PageWrap } from "../../components/pagewrapp/style";
 import * as storage from "../../hooks/storage";
-import { CartWrap, CartContainer, Image, SmallText, Icon, Heading, FormWrap, FlexWrap, CheckoutWrap, TotalCost, CartBtn } from "./style";
-import { useNavigate } from "react-router-dom";
+import { CartWrap, CartContainer, Image, SmallText, Icon, Heading, FormWrap, FlexWrap, 
+         CheckoutWrap, TotalCost, CartBtn, StoreBtn 
+       } from "./style";
+import { Link, useNavigate } from "react-router-dom";
 import { cartBtns } from "../../hooks/cartfunctions";
 import CheckoutForm from "../../components/checkoutform";
 
@@ -76,6 +78,9 @@ export default function Cart() {
                     <CheckoutForm/>
                 </FormWrap>
             </FlexWrap>
+            <StoreBtn>
+                <Link to={"/"}>Back to store</Link>
+            </StoreBtn>
         </PageWrap>
     )
 }

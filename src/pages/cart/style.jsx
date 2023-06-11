@@ -71,3 +71,15 @@ export const CartBtn = styled.button`
   margin: 3px;
   cursor: pointer;
 `;
+export const StoreBtn = styled.div`
+  background-color: ${(props) => props.theme.color.light};
+  border-radius: ${(props) => props.theme.sizes.borderRadius};
+  border: 1px solid ${(props) => props.theme.color.font};
+  padding: 10px 20px;
+  margin: 1rem;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: fit-content;
+`;
