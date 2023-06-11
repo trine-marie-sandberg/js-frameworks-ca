@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { PageWrap } from "../../components/pagewrapp/style";
 import * as storage from "../../hooks/storage";
-import { CartWrap, CartContainer, Image, SmallText, Icon, Heading, FormWrap, FlexWrap, CheckoutWrap, TotalCost } from "./style";
+import { CartWrap, CartContainer, Image, SmallText, Icon, Heading, FormWrap, FlexWrap, CheckoutWrap, TotalCost, CartBtn } from "./style";
 import { useNavigate } from "react-router-dom";
 import { cartBtns } from "../../hooks/cartfunctions";
 import CheckoutForm from "../../components/checkoutform";
@@ -55,9 +55,9 @@ export default function Cart() {
                         const cartBtn = cartBtns(data.id, data.title, data.price, data.imgUrl);
                         return(
                             <CartWrap key={data.id}>
-                                <button onClick={cartBtn.add}>+</button>
-                                <button onClick={cartBtn.remove}>-</button>
-                                <button onClick={cartBtn.clear}>Remove</button> 
+                                <CartBtn onClick={cartBtn.add}>+</CartBtn>
+                                <CartBtn onClick={cartBtn.remove}>-</CartBtn>
+                                <CartBtn onClick={cartBtn.clear}>Clear</CartBtn> 
                                 {cartBtn.displayCount}
                                 <div  onClick={() => navigate(`/product/${data.id}`)} aria-label="Back button">
                                 <SmallText>{data.title}</SmallText>

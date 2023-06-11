@@ -55,7 +55,7 @@ export function cartBtns(id, title, price, img) {
     } else {
         currentCount = 0;
     }
-    const displayCount = <p>Current copies: {currentCount} <Icon className="fa-solid fa-cart-shopping"></Icon></p>
+    const displayCount = <p>Amount: {currentCount} in cart <Icon className="fa-solid fa-cart-shopping"></Icon></p>
 
     return {add, remove, clear, displayCount};
 }

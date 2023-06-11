@@ -34,3 +34,11 @@ export const EmphasizeText = styled.div`
   color: ${(props) => props.theme.color.secondary};
   font-size: larger;
 `;
+export const CartBtn = styled.button`
+  background-color: ${(props) => props.theme.color.darker};
+  color: ${(props) => props.theme.color.font};
+  border: 1px solid ${(props) => props.theme.color.font};
+  padding: 5px 8px;
+  margin: 3px;
+  cursor: pointer;
+`;

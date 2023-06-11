@@ -63,3 +63,11 @@ margin: 15px;
 export const TotalCost = styled.p`
   padding: 5px;
 `;
+export const CartBtn = styled.button`
+  background-color: ${(props) => props.theme.color.darker};
+  color: ${(props) => props.theme.color.font};
+  border: 1px solid ${(props) => props.theme.color.light};
+  padding: 5px 8px;
+  margin: 3px;
+  cursor: pointer;
+`;

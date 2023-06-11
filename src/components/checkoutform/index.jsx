@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { FormContainer, Select, InputWrap, Label, Input, Button, FlexWrap } from "./style";
 
 export default function CheckoutForm() {
+
     const navigate = useNavigate();
     const [fullName, setFullName] = useState('');
     const [address, setAddress] = useState('');
@@ -12,24 +13,19 @@ export default function CheckoutForm() {
 
     const handleFullNameChange = (e) => {
         setFullName(e.target.value);
-    };
-
+    }
     const handleAddressChange = (e) => {
         setAddress(e.target.value);
-    };
-
+    }
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
-    };
-
+    }
     const handleCardNumberChange = (e) => {
         setCardNumber(e.target.value);
-    };
-
+    }
     const handleCvcChange = (e) => {
         setCvc(e.target.value);
-    };
-
+    }
     const handleSubmit = (e) => {
         e.preventDefault();
         localStorage.clear();
@@ -98,5 +94,5 @@ export default function CheckoutForm() {
             </InputWrap>
             <Button type="submit">Submit</Button>
         </FormContainer>
-    );
+    )
 }

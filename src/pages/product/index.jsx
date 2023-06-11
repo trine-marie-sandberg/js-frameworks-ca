@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { PageWrap } from "../../components/pagewrapp/style";
-import { Image, ProductWrap, Button, Icon, EmphasizeText, MarginWrap, StarWrap } from "./style";
+import { Image, ProductWrap, Button, Icon, EmphasizeText, MarginWrap, StarWrap, CartBtn } from "./style";
 import apiCall from "../../hooks/api";
 import { productVariables, createStars } from "../../hooks/variables";
 import { cartBtns } from "../../hooks/cartfunctions";
@@ -44,14 +44,10 @@ export default function ProductPage() {
                          {...starIcons}
                       </StarWrap>
                   </EmphasizeText>
-                  <Button onClick={cartBtn.add}>
-                      Add to cart + 
-                      <Icon className="fa-solid fa-cart-shopping"></Icon>
-                  </Button>
                   {cartBtn.displayCount}
-                  <button onClick={cartBtn.remove}>-</button>
-                  <button onClick={cartBtn.add}>+</button>
-                  <button onClick={cartBtn.clear}>Remove</button>
+                  <CartBtn onClick={cartBtn.remove}>-</CartBtn>
+                  <CartBtn onClick={cartBtn.add}>+</CartBtn>
+                  <CartBtn onClick={cartBtn.clear}>Clear</CartBtn>
                 </MarginWrap>
                 <MarginWrap>
                     <Image src={data.imageUrl} alt={data.title}/>
