@@ -24,7 +24,6 @@ export function cartVariables(id) {
         price: "",
         imgUrl: "",
     }
-
     return initialCartState;
 }
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { PageWrap } from "../../components/pagewrapp/style";
-import { Image, ProductWrap, Button, Icon, EmphasizeText, MarginWrap, StarWrap, CartBtn, ToCartBtn, ButtonsWrap } from "./style";
+import { Image, ProductWrap, Button, Icon, EmphasizeText, MarginWrap, StarWrap, CartBtn, ToCartBtn, ButtonsWrap, ReviewsWrap, ReviewWrap } from "./style";
 import apiCall from "../../hooks/api";
 import { productVariables, createStars } from "../../hooks/variables";
 import { cartBtns } from "../../hooks/cartfunctions";
@@ -13,7 +13,6 @@ export default function ProductPage() {
   const navigate = useNavigate();
   const { data, loading, error } = apiCall(`https://api.noroff.dev/api/v1/online-shop/${id}`);
   
-  let getReviews = [data.reviews];
   let tags = [data.tags];
   const cv = productVariables(data);
   const starIcons = createStars(cv.rating, cv.stars);
@@ -70,16 +69,12 @@ export default function ProductPage() {
                     <p>Tags: {...tags}</p>
                 </MarginWrap>
             </ProductWrap>
-            <div>
-                <div>
-                  {reviews?.map(({ username, id, rating, description }) => (
-                    <div key={id}>
-                    <h3>{username} gave this product {rating} stars</h3>
-                    <p className="description">{description}</p>
-                    </div>
-                  ))}
-                </div>
-            </div>
+                {reviews?.map(({ username, id, rating, description }) => (
+                   <ReviewWrap key={id}>
+                      <h3>{username} gave this product {rating} stars</h3>
+                      <p className="description">{description}</p>
+                   </ReviewWrap>
+                ))}
         </PageWrap>
     )
 }

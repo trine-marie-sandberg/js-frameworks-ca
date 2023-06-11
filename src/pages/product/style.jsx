@@ -61,3 +61,13 @@ export const ButtonsWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
+export const ReviewsWrap = styled.div`
+  padding: 16px;
+`;
+export const ReviewWrap = styled.div`
+  margin: 5px;
+  padding: 16px;
+  background-color: ${(props) => props.theme.color.darker};
+  border: 1px solid ${(props) => props.theme.color.light};
+  border-radius: ${(props) => props.theme.sizes.borderRadius};
+`;
