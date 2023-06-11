@@ -57,3 +57,7 @@ export const ToCartBtn = styled.div`
     color: ${(props) => props.theme.color.secondary};
   }
 `;
+export const ButtonsWrap = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;

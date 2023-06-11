@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { PageWrap } from "../../components/pagewrapp/style";
 import * as storage from "../../hooks/storage";
 import { CartWrap, CartContainer, Image, SmallText, Icon, Heading, FormWrap, FlexWrap, 
-         CheckoutWrap, TotalCost, CartBtn, StoreBtn 
+         CheckoutWrap, TotalCost, CartBtn, ToCartBtn
        } from "./style";
 import { Link, useNavigate } from "react-router-dom";
 import { cartBtns } from "../../hooks/cartfunctions";
@@ -46,6 +46,14 @@ export default function Cart() {
     
     return(
         <PageWrap>
+            <div>
+              <Link to={"/"}>
+                <ToCartBtn>
+                  Go to store <i className="fa-solid fa-store"></i>
+                  <i className="fa-solid fa-arrow-right"></i>
+                </ToCartBtn>
+              </Link>
+            </div>
             <FlexWrap>
                 <CartContainer>
                     <Heading>
@@ -78,9 +86,6 @@ export default function Cart() {
                     <CheckoutForm/>
                 </FormWrap>
             </FlexWrap>
-            <StoreBtn>
-                <Link to={"/"}>Back to store</Link>
-            </StoreBtn>
         </PageWrap>
     )
 }

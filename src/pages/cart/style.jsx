@@ -83,3 +83,17 @@ export const StoreBtn = styled.div`
   cursor: pointer;
   height: fit-content;
 `;
+export const ToCartBtn = styled.div`
+  height: fit-content;
+  width: fit-content;
+  padding: 10px 20px;
+  margin: 16px 0px;
+  cursor: pointer;
+  background-color: ${(props) => props.theme.color.primary};
+  color: ${(props) => props.theme.color.secondary};
+  border-radius: ${(props) => props.theme.sizes.borderRadius};
+  border: 1px solid ${(props) => props.theme.color.secondary};
+  & a {
+    color: ${(props) => props.theme.color.secondary};
+  }
+`;
