@@ -9,13 +9,18 @@ import CheckoutForm from "../../components/checkoutform";
 export default function Cart() {
     const navigate = useNavigate();
     const cartItems = {...localStorage};
-    let cartArray = [];
     let objectKeys = Object.keys(cartItems);
+    let cartArray = [];
     let totalArray = [];
+    let getAmount = [];
+    let itemPrice = 0;
 
     for(let i = 0; i < objectKeys.length; i++) {
         cartArray.push(storage.load(objectKeys[i]));
-        totalArray.push(cartArray[i].price)
+        getAmount.push({
+            price: cartArray[i].price,
+            amount: cartArray[i].count,
+        });
     }
 
     const [cart, setCart] = useState(cartArray);
@@ -27,6 +32,12 @@ export default function Cart() {
     })
 
     useEffect(() => {
+        for(let i = 0; i < getAmount.length; i++) {
+            let price = getAmount[i].price;
+            let amount = getAmount[i].amount;
+            itemPrice = price * amount;
+            totalArray.push(itemPrice);
+        }
         setTotal(() => totalArray.reduce((partialSum, a) => partialSum + a, 0));
     }, [storageState]);
     
@@ -37,6 +48,7 @@ export default function Cart() {
                     <Heading>
                         <h1>My cart</h1>
                         <Icon className="fa-solid fa-cart-shopping"></Icon>
+                        <p>Total price ${total}</p>
                     </Heading>
                     {cart.map((data) => {
                         const cartBtn = cartBtns(data.id, data.title, data.price, data.imgUrl);
