@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 import { Nav, Ul, Li, I } from "./style";
 import { NavLink } from "react-router-dom";
-import { CartIcon } from "./cart";
+import { CartIcon } from "./carticon";
 
 const Button = styled.button`
   background-color: ${(props) => props.theme.color.secondary};
