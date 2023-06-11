@@ -17,14 +17,18 @@ export default function Cart() {
         cartArray.push(storage.load(objectKeys[i]));
         totalArray.push(cartArray[i].price)
     }
+
     const [cart, setCart] = useState(cartArray);
-    const [total, setTotal] = useState([])
+    const [total, setTotal] = useState([]);
+    const [storageState, setStorageState] = useState(0);
+
+    window.addEventListener("storage", () => {
+        setStorageState(storageState + 1);
+    })
 
     useEffect(() => {
-        setCart(cartArray)
-        console.log(cart)
-        setTotal(() => totalArray.reduce((partialSum, a) => partialSum + a, 0))
-    }, [])
+        setTotal(() => totalArray.reduce((partialSum, a) => partialSum + a, 0));
+    }, [storageState]);
     
     return(
         <PageWrap>

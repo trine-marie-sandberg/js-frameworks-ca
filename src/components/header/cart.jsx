@@ -8,17 +8,16 @@ export function CartIcon() {
     let itemsInCart = objectKeys.length;
 
     const [storageState, setStorageState] = useState(0);
-    const [itemsCount, setItemsCount] = useState(itemsInCart);
+    const [itemsCount, setItemsCount] = useState(0);
 
     window.addEventListener("storage", () => {
-        //Should re-render when changes to localstorage is made
         let newStorageState = storageState + 1;
         setStorageState(newStorageState);
-    })
+    });
 
     useEffect(() => {
         setItemsCount(itemsInCart);
-    }, [storageState])
+    }, [storageState]);
 
     return(
         <NavLink to="cart" aria-label="Cart">

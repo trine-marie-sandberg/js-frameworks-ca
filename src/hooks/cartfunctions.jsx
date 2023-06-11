@@ -31,28 +31,27 @@ export function cartBtns(id, title, price, img) {
         storage.save(id, updateCartState);
     }
     function add() { 
-        setState({ type: 'increment' });
         window.dispatchEvent(new Event('storage'));
+        setState({ type: 'increment' });
     }
     function remove() {
-        setState({ type: 'decrement' });
         window.dispatchEvent(new Event('storage'));
-        //if(state.count <= 1) {
+        setState({ type: 'decrement' });
+        if(state.count <= 1) {
             //NB: 1 works as 0 for some reason
-            //storage.remove(id);
-        //}
+            storage.remove(id);
+        }
     }
     function clear() {
-        setState({ type: 'reset' });
-        storage.remove(id);
         window.dispatchEvent(new Event('storage'));
+        setState({ type: 'reset' });
+        storage.remove(id);  
     }
   
     let currentCount;
     if(storage.load(id)) {
         let getCurrentCount = storage.load(id)
         currentCount = getCurrentCount.count;
-        window.dispatchEvent(new Event('storage'));
     } else {
         currentCount = 0;
     }
