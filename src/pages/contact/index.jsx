@@ -9,7 +9,7 @@ export default function ContactPage() {
         <PageWrap>
             <Padding>
                 <h2>Contact form</h2>
-                <p>Please use this form to contact uss</p>
+                <p>Please use this form to contact us</p>
             </Padding>
             <ContactForm></ContactForm>
         </PageWrap>

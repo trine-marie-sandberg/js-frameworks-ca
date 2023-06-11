@@ -20,6 +20,9 @@ export const Ul = styled.ul`
 `;
 export const Li = styled.li`
   padding: 5px;
+  & :hover p {
+    display: block;
+  }
 `;
 export const I = styled.i`
   font-size: ${(props) => props.theme.sizes.med};
@@ -43,4 +46,8 @@ export const CartItemsIndikator = styled.p`
   align-self: center;
   margin: 0 auto;
   color: ${(props) => props.theme.color.font};
+`;
+export const HoverText = styled.p`
+  display: none;
+  position: absolute;
 `;
