@@ -46,7 +46,7 @@ export default function ProductPage() {
                   </EmphasizeText>
                   <p>{cv.description}</p>
                   <EmphasizeText>
-                      {cv.saleText}
+                      <p>{cv.saleText}</p>
                       <StarWrap aria-label={"Product rating: " + cv.rating + " stars"}>
                          <MarginWrap>Rating:</MarginWrap>
                          {...starIcons}

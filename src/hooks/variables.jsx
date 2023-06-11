@@ -1,19 +1,18 @@
+import { SaleSum } from "./specialstyles";
 export function productVariables(data) {
+
     let price = data.price;
     let discount = data.discountedPrice;
-    let saleIcon;
     let saleText;
     let rating = data.rating;
     let title = data.title;
     let imgUrl = data.imageUrl;
 
     if (price > discount) {
+        saleText = <><i className="fa-solid fa-fire"></i> On sale! <SaleSum> Ordinary price: {price}</SaleSum></>;
         price = discount;
-        saleIcon = <i className="fa-solid fa-fire"></i>;
-        saleText = <p>{saleIcon} On sale! Ordinary price: {price}</p>;
     }
-
-    return {price, discount, saleIcon, saleText, rating, title, imgUrl};
+    return {price, discount, saleText, rating, title, imgUrl};
 }
 
 export function cartVariables(id) {
