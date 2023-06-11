@@ -35,7 +35,8 @@ export default function Cart() {
         for(let i = 0; i < getAmount.length; i++) {
             let price = getAmount[i].price;
             let amount = getAmount[i].amount;
-            itemPrice = price * amount;
+            const totalPrice = price * amount;
+            itemPrice = Math.ceil(totalPrice);
             totalArray.push(itemPrice);
         }
         setTotal(() => totalArray.reduce((partialSum, a) => partialSum + a, 0));
