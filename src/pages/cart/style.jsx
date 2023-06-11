@@ -53,3 +53,13 @@ export const FlexWrap = styled.div`
 export const FormWrap = styled.div`
   padding: 1rem;
 `;
+export const CheckoutWrap = styled.div`
+margin: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+`;
+export const TotalCost = styled.p`
+  padding: 5px;
+`;

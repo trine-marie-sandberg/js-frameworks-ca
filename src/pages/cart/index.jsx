@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { PageWrap } from "../../components/pagewrapp/style";
 import * as storage from "../../hooks/storage";
-import { CartWrap, CartContainer, Image, SmallText, Icon, Heading, FormWrap, FlexWrap } from "./style";
+import { CartWrap, CartContainer, Image, SmallText, Icon, Heading, FormWrap, FlexWrap, CheckoutWrap, TotalCost } from "./style";
 import { useNavigate } from "react-router-dom";
 import { cartBtns } from "../../hooks/cartfunctions";
 import CheckoutForm from "../../components/checkoutform";
@@ -69,8 +69,10 @@ export default function Cart() {
                     })}
                 </CartContainer>
                 <FormWrap>
-                    <h2>Checkout</h2>
-                    <h3>Total: ${total}</h3>
+                    <CheckoutWrap>
+                        <h2>Checkout</h2>
+                        <TotalCost>Total cost: ${total}</TotalCost>
+                    </CheckoutWrap>
                     <CheckoutForm/>
                 </FormWrap>
             </FlexWrap>
