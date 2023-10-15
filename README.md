@@ -17,12 +17,12 @@ A ecom site created for my JavaScript frameworks React exam during my second yea
 
 ### Install
 
-1 clone the repo:
+1. clone the repo:
 
 ```bash
 git clone git@github.com:trine-marie-sandberg/js-frameworks-ca.git
 ```
-1 install
+2. install
 ```bash
 npm install
 ```
