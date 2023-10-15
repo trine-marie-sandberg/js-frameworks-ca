@@ -22,3 +22,7 @@ A ecom site created for my JavaScript frameworks React exam during my second yea
 ```bash
 git clone git@github.com:trine-marie-sandberg/js-frameworks-ca.git
 ```
+1 install
+```bash
+npm install
+```
